@@ -4,7 +4,10 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
 import pages.base.PageBase;
+
+import java.util.List;
 
 public class MainPage extends PageBase {
     public MainPage(WebDriver driver) {
@@ -34,7 +37,11 @@ public class MainPage extends PageBase {
     @FindBy(xpath = "/html/body/div/div/div[2]/div/div[2]/div/div/form/div[3]/input")
     WebElement postalCode;
 
+    @FindBys({@FindBy(xpath = "//table/tbody/tr[@class='ng-scope']")})
+    public List<WebElement> rowsFromTableCustomer;
+
     public void clickButtonAddCustomer() {
+
         clickButton(addCustomer);
     }
 

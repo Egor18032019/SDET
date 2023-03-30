@@ -5,9 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75407d05-089f-442e-a3be-72a2a5cd4cbe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/cases/SecondCaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/cases/FirstCaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cases/FirstCaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-results/0048fbd1-dedf-470a-aa26-2ed41abec14a-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-results/33e09173-e51d-4cd2-8261-fbd8b21da2b8-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-results/48bec05b-612c-4698-ae6a-34217e613a79-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-results/52df4cbb-535c-4175-8675-f9ba77808a70-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-results/8a5010a8-69f0-4ff2-9709-cee8244d507b-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-results/8bb96aa7-b27a-4e7e-8a56-521cbf23feb0-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-results/9728bb7a-04dd-4a1f-b152-24f9449aa5a7-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-results/aa14749f-1419-4d81-8219-5f7c1b848264-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-results/afd979fd-24a6-4321-8747-5cd0ffc00076-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-results/ca4aa6e1-cec7-43ed-98b7-e73b78bf5dd4-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-results/cb65091e-4bdd-44d7-a6c9-3ce152fd3e88-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-results/cd7e5750-65eb-4e71-bb66-1df094827d65-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-results/cde19a8b-0287-4dfc-9cc6-bebfa615c477-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-results/e26b0181-c36a-4227-b8db-1b971e0451e6-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-results/f44ad68e-5dcf-41ca-b505-dab11deff44f-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/cases/SecondCaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cases/SecondCaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/MainPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +38,18 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="firstCases" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/.gitignore" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/test/java/pages/MainPage.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/test/java/utils/Const.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -50,12 +77,43 @@
       <module name="SDETsecond" />
       <extension name="coverage">
         <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cases" />
+      <option name="MAIN_CLASS_NAME" value="tests.FirstCaseTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FirstCaseTest.creatingCustomer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SDETsecond" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.FirstCaseTest" />
+      <option name="METHOD_NAME" value="creatingCustomer" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SecondCaseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SDETsecond" />
+      <extension name="coverage">
+        <pattern>
           <option name="PATTERN" value="cases.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="cases" />
-      <option name="MAIN_CLASS_NAME" value="cases.FirstCaseTest" />
+      <option name="MAIN_CLASS_NAME" value="cases.SecondCaseTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -65,7 +123,7 @@
       <module name="SDETsecond" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="cases.*" />
+          <option name="PATTERN" value="tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -80,6 +138,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.SecondCaseTest.secondCase" />
+        <item itemvalue="JUnit.SecondCaseTest" />
+        <item itemvalue="JUnit.FirstCaseTest.creatingCustomer" />
         <item itemvalue="JUnit.FirstCaseTest" />
       </list>
     </recent_temporary>
