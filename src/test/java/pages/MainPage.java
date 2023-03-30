@@ -4,62 +4,94 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import pages.base.PageBase;
+import pages.base.BasePage;
 
-public class MainPage extends PageBase {
+/**
+ * Главная страница
+ */
+public class MainPage extends BasePage {
     public MainPage(WebDriver driver) {
         super(driver);
     }
 
-    @FindBy(xpath = "/html/body/div/div/div[2]/div/div[1]/button[1]")
-    public WebElement addCustomer;
-
+    /**
+     * Кнопка <Add Customer>
+     */
+    @FindBy(xpath = "//button[contains(text(),'Add Customer')]")
+    public WebElement addCustomerButton;
+    /**
+     * Кнопка <Open Account>
+     */
     @FindBy(xpath = "//button[contains(text(),'Open Account')]")
-    public WebElement openAccount;
-    @FindBy(xpath = "/html/body/div[1]/div/div[2]/div/div[2]/div/div/form/button")
-    public WebElement creatAccount;
+    public WebElement openAccountButton;
+    /**
+     * Кнопка <Add Customer> расположенная после(ниже) полей для текстового вода
+     */
+    @FindBy(xpath = "//button[contains(text(),'Add Customer')][@class='btn btn-default']")
+    public WebElement createAccountButton;
+    /**
+     * Кнопка <Customers>
+     */
     @FindBy(xpath = "//button[@ng-class='btnClass3']")
-    public WebElement customers;
-
+    public WebElement customersButton;
+    /**
+     * Строка таблицы из вкладки Customer
+     */
     @FindBy(css = ".ng-binding")
     public WebElement row;
+    /**
+     * Поле для текстового вода First name
+     */
     @FindBy(xpath = "//input[@ng-model='fName']")
-    WebElement firstName;
+    WebElement firstNameInput;
+    /**
+     * Поле для текстового вода Last name
+     */
     @FindBy(xpath = "//input[@placeholder='Last Name']")
-    WebElement lastName;
+    WebElement lastNameInput;
+    /**
+     * Поле для текстового вода используемая для поиска клиента
+     */
     @FindBy(xpath = "//input[@placeholder='Search Customer']")
-    WebElement inputSearchCustomer;
+    WebElement searchCustomerInput;
     @FindBy(linkText = "First Name")
     WebElement sortLinkFirsName;
-    @FindBy(xpath = "/html/body/div/div/div[2]/div/div[2]/div/div/form/div[3]/input")
-    WebElement postalCode;
+    /**
+     * Поле для текстового вода Post Code
+     */
+    @FindBy(xpath = "//input[@placeholder='Post Code']")
+    WebElement postalCodeInput;
 
+    @Step("Нажатие на кнопку Add Customer для перехода на вкладку создание клиентов")
     public void clickButtonAddCustomer() {
-        clickButton(addCustomer);
+        clickButton(addCustomerButton);
     }
 
+    @Step("Нажатие на кнопку Open Customer для перехода на вкладку поиска клиентов")
     public void clickButtonOpenAccount() {
-        clickButton(openAccount);
+        clickButton(openAccountButton);
     }
 
+    @Step("Нажатие на кнопку Customer для перехода на вкладку поиска клиентов")
     public void clickButtonCustomer() {
-        clickButton(customers);
+        clickButton(customersButton);
     }
 
-    public void creatCostumer(String first, String last, String postal) {
-        setTextElementText(firstName, first);
-        setTextElementText(lastName, last);
-        setTextElementText(postalCode, postal);
-        clickButton(creatAccount);
+    @Step("Создание клиента")
+    public void creaNewtCustomer(String first, String last, String postal) {
+        setTextElementText(firstNameInput, first);
+        setTextElementText(lastNameInput, last);
+        setTextElementText(postalCodeInput, postal);
+        clickButton(createAccountButton);
     }
 
-    public void searchCostumer(String name) {
-        setTextElementText(inputSearchCustomer, name);
+    @Step("Поиск клиента")
+    public void searchCustomer(String name) {
+        setTextElementText(searchCustomerInput, name);
     }
 
     @Step("Нажали на First name")
-    public void sortedForFirstName() {
+    public void sortForFirstName() {
         clickButton(sortLinkFirsName);
-        System.out.println("Нажали на First name");
     }
 }
