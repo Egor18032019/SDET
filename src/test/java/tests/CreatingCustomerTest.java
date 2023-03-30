@@ -3,10 +3,10 @@ package tests;
 import io.qameta.allure.Description;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.MainPage;
 import tests.base.BaseCaseTest;
 import utils.Const;
+import utils.Waiters;
 
 public class CreatingCustomerTest extends BaseCaseTest {
     MainPage mainPage;
@@ -15,11 +15,11 @@ public class CreatingCustomerTest extends BaseCaseTest {
     @Description("Создание клиента (Customer)")
     public void creatingCustomerTest() {
         mainPage = new MainPage(driver);
-        BaseCaseTest.wait.until(ExpectedConditions.visibilityOf(mainPage.addCustomerButton));
+        Waiters.waitVisibilityElement(mainPage.addCustomerButton, BaseCaseTest.wait);
         mainPage.clickButtonAddCustomer();
-        BaseCaseTest.wait.until(ExpectedConditions.visibilityOf(mainPage.createAccountButton));
+        Waiters.waitVisibilityElement(mainPage.createAccountButton, BaseCaseTest.wait);
         mainPage.creatNewCustomer(Const.firstName, Const.lastName, Const.postalCode);
-        BaseCaseTest.wait.until(ExpectedConditions.alertIsPresent());
+        Waiters.waitAlertWindow(BaseCaseTest.wait);
         String textOnAlert = mainPage.giveMeAlertText(driver);
         boolean iaAdded = textOnAlert.startsWith(Const.expectedTextAfterCreatNewCustomer);
         Assertions.assertTrue(iaAdded, "New customer not added");

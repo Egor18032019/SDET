@@ -44,27 +44,27 @@ public class MainPage extends BasePage {
      * Поле для текстового вода First name
      */
     @FindBy(xpath = "//input[@ng-model='fName']")
-    WebElement firstNameInput;
+    public WebElement firstNameInput;
     /**
      * Поле для текстового вода Last name
      */
     @FindBy(xpath = "//input[@placeholder='Last Name']")
-    WebElement lastNameInput;
+    public WebElement lastNameInput;
     /**
      * Поле для текстового вода используемая для поиска клиента
      */
     @FindBy(xpath = "//input[@placeholder='Search Customer']")
-    WebElement searchCustomerInput;
+    public WebElement searchCustomerInput;
     /**
      * Ячейка в таблице клиентов надписью "First Name"
      */
     @FindBy(linkText = "First Name")
-    WebElement sortLinkFirsName;
+    public WebElement sortLinkFirsName;
     /**
      * Поле для текстового вода Post Code
      */
     @FindBy(xpath = "//input[@placeholder='Post Code']")
-    WebElement postalCodeInput;
+    public WebElement postalCodeInput;
 
     @Step("Нажатие на кнопку Add Customer для перехода на вкладку создание клиентов")
     public void clickButtonAddCustomer() {
@@ -82,10 +82,10 @@ public class MainPage extends BasePage {
     }
 
     @Step("Создание клиента")
-    public void creatNewCustomer(String first, String last, String postal) {
-        setTextElementText(firstNameInput, first);
-        setTextElementText(lastNameInput, last);
-        setTextElementText(postalCodeInput, postal);
+    public void creatNewCustomer(String firstName, String lastName, String postalCode) {
+        setTextElementText(firstNameInput, firstName);
+        setTextElementText(lastNameInput, lastName);
+        setTextElementText(postalCodeInput, postalCode);
         clickButton(createAccountButton);
     }
 
@@ -98,9 +98,8 @@ public class MainPage extends BasePage {
     public void sortForFirstName() {
         clickButton(sortLinkFirsName);
     }
-    @Step("Получение")
+    @Step("Получение текста alerta(модального окна)")
     public String giveMeAlertText(WebDriver driver) {
-
         Alert alert = driver.switchTo().alert();
         return alert.getText();
     }
