@@ -2,6 +2,7 @@ package cases;
 
 import cases.base.BaseCase;
 import io.qameta.allure.Description;
+import io.qameta.allure.Issue;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Alert;
@@ -13,6 +14,7 @@ public class FirstCaseTest extends BaseCase {
     //TODO ограничение работы теста
     // TODO проверка перед запуском есть ли интернет
     @Test
+    @Issue("T1")
     @Description("Создание клиента (Customer)")
     public void fistCase() {
         System.out.println("fistCase");
