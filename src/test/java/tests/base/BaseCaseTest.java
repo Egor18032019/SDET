@@ -5,13 +5,15 @@ import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.Const;
 
 import java.time.Duration;
 
-public class BaseCase {
+public class BaseCaseTest {
 
     public static WebDriver driver;
+    public static WebDriverWait wait;
 
     // TODO проверить интернет
     @BeforeEach
@@ -20,10 +22,10 @@ public class BaseCase {
         ChromeOptions options = new ChromeOptions();
 //        options.addArguments("--headless");
         driver = new ChromeDriver(options);
-        System.setProperty("webdriver.chrome.driver",  Const.pathGoogleDriver);
+        System.setProperty("webdriver.chrome.driver", Const.pathGoogleDriver);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(11));
         driver.navigate().to(Const.urlMain);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
     @AfterEach()

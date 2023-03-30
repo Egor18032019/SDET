@@ -1,6 +1,7 @@
 package pages;
 
 import io.qameta.allure.Step;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -54,6 +55,9 @@ public class MainPage extends BasePage {
      */
     @FindBy(xpath = "//input[@placeholder='Search Customer']")
     WebElement searchCustomerInput;
+    /**
+     * Ячейка в таблице клиентов надписью "First Name"
+     */
     @FindBy(linkText = "First Name")
     WebElement sortLinkFirsName;
     /**
@@ -78,7 +82,7 @@ public class MainPage extends BasePage {
     }
 
     @Step("Создание клиента")
-    public void creaNewtCustomer(String first, String last, String postal) {
+    public void creatNewCustomer(String first, String last, String postal) {
         setTextElementText(firstNameInput, first);
         setTextElementText(lastNameInput, last);
         setTextElementText(postalCodeInput, postal);
@@ -93,5 +97,11 @@ public class MainPage extends BasePage {
     @Step("Нажали на First name")
     public void sortForFirstName() {
         clickButton(sortLinkFirsName);
+    }
+    @Step("Получение")
+    public String giveMeAlertText(WebDriver driver) {
+
+        Alert alert = driver.switchTo().alert();
+        return alert.getText();
     }
 }
