@@ -8,6 +8,10 @@ import tests.base.BaseCaseTest;
 import utils.Const;
 import utils.Waiters;
 
+/**
+ * Тест кейс T1
+ * Создание клиента (Customer)
+ */
 public class CreatingCustomerTest extends BaseCaseTest {
     MainPage mainPage;
 
@@ -24,6 +28,4 @@ public class CreatingCustomerTest extends BaseCaseTest {
         boolean iaAdded = textOnAlert.startsWith(Const.expectedTextAfterCreatNewCustomer);
         Assertions.assertTrue(iaAdded, "New customer not added");
     }
-
-
 }
