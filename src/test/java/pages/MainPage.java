@@ -1,72 +1,120 @@
 package pages;
 
 import io.qameta.allure.Step;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
-import pages.base.PageBase;
+import pages.base.BasePage;
 
 import java.util.List;
 
-public class MainPage extends PageBase {
+/**
+ * Главная страница
+ */
+public class MainPage extends BasePage {
+
     public MainPage(WebDriver driver) {
         super(driver);
     }
 
-    @FindBy(xpath = "/html/body/div/div/div[2]/div/div[1]/button[1]")
-    public WebElement addCustomer;
-
+    /**
+     * Кнопка <Add Customer>
+     */
+    @FindBy(xpath = "//button[contains(text(),'Add Customer')]")
+    public WebElement addCustomerButton;
+    /**
+     * Кнопка <Open Account>
+     */
     @FindBy(xpath = "//button[contains(text(),'Open Account')]")
-    public WebElement openAccount;
-    @FindBy(xpath = "/html/body/div[1]/div/div[2]/div/div[2]/div/div/form/button")
-    public WebElement creatAccount;
+    public WebElement openAccountButton;
+    /**
+     * Кнопка <Add Customer> расположенная после(ниже) полей для текстового вода
+     */
+    @FindBy(xpath = "//button[contains(text(),'Add Customer')][@class='btn btn-default']")
+    public WebElement createAccountButton;
+    /**
+     * Кнопка <Customers>
+     */
     @FindBy(xpath = "//button[@ng-class='btnClass3']")
-    public WebElement customers;
-
+    public WebElement customersButton;
+    /**
+     * Таблица на вкладке Customers
+     */
+    @FindBy(xpath = "//table[@class='table table-bordered table-striped']")
+    public WebElement table;
+    /**
+     * Строка таблицы из вкладки Customer
+     */
     @FindBy(css = ".ng-binding")
     public WebElement row;
+    /**
+     * Поле для текстового вода First name
+     */
     @FindBy(xpath = "//input[@ng-model='fName']")
-    WebElement firstName;
+    public WebElement firstNameInput;
+    /**
+     * Поле для текстового вода Last name
+     */
     @FindBy(xpath = "//input[@placeholder='Last Name']")
-    WebElement lastName;
+    public WebElement lastNameInput;
+    /**
+     * Поле для текстового вода используемая для поиска клиента
+     */
     @FindBy(xpath = "//input[@placeholder='Search Customer']")
-    WebElement inputSearchCustomer;
+    public WebElement searchCustomerInput;
+    /**
+     * Ячейка в таблице клиентов надписью "First Name"
+     */
     @FindBy(linkText = "First Name")
-    WebElement sortLinkFirsName;
-    @FindBy(xpath = "/html/body/div/div/div[2]/div/div[2]/div/div/form/div[3]/input")
-    WebElement postalCode;
+    public WebElement sortLinkFirsName;
+    /**
+     * Поле для текстового вода Post Code
+     */
+    @FindBy(xpath = "//input[@placeholder='Post Code']")
+    public WebElement postalCodeInput;
 
     @FindBys({@FindBy(xpath = "//table/tbody/tr[@class='ng-scope']")})
     public List<WebElement> rowsFromTableCustomer;
 
+
+    @Step("Нажатие на кнопку Add Customer для перехода на вкладку создание клиентов")
     public void clickButtonAddCustomer() {
-
-        clickButton(addCustomer);
+        clickButton(addCustomerButton);
     }
 
+    @Step("Нажатие на кнопку Open Customer для перехода на вкладку поиска клиентов")
     public void clickButtonOpenAccount() {
-        clickButton(openAccount);
+        clickButton(openAccountButton);
     }
 
+    @Step("Нажатие на кнопку Customer для перехода на вкладку поиска клиентов")
     public void clickButtonCustomer() {
-        clickButton(customers);
+        clickButton(customersButton);
     }
 
-    public void creatCostumer(String first, String last, String postal) {
-        setTextElementText(firstName, first);
-        setTextElementText(lastName, last);
-        setTextElementText(postalCode, postal);
-        clickButton(creatAccount);
+    @Step("Создание клиента")
+    public void creatNewCustomer(String firstName, String lastName, String postalCode) {
+        setTextElementText(firstNameInput, firstName);
+        setTextElementText(lastNameInput, lastName);
+        setTextElementText(postalCodeInput, postalCode);
+        clickButton(createAccountButton);
     }
 
-    public void searchCostumer(String name) {
-        setTextElementText(inputSearchCustomer, name);
+    @Step("Поиск клиента")
+    public void searchCustomer(String name) {
+        setTextElementText(searchCustomerInput, name);
     }
 
     @Step("Нажали на First name")
-    public void sortedForFirstName() {
+    public void sortForFirstName() {
         clickButton(sortLinkFirsName);
-        System.out.println("Нажали на First name");
+    }
+
+    @Step("Получение текста alerta(модального окна)")
+    public String giveMeAlertText(WebDriver driver) {
+        Alert alert = driver.switchTo().alert();
+        return alert.getText();
     }
 }
