@@ -100,7 +100,7 @@ public class MainPage extends BasePage {
         clickButton(createAccountButton);
     }
 
-    @Step("Поиск клиента")
+    @Step("Поиск клиента {name}")
     public void searchCustomer(String name) {
         setTextElementText(searchCustomerInput, name);
     }
