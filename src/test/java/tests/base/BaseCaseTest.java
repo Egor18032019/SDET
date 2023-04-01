@@ -19,7 +19,9 @@ public class BaseCaseTest {
     public void openURL() {
         System.setProperty("webdriver.http.factory", "jdk-http-client");
         ChromeOptions options = new ChromeOptions();
-//        options.addArguments("--headless");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--headless");
         driver = new ChromeDriver(options);
         System.setProperty("webdriver.chrome.driver", Const.pathGoogleDriver);
         driver.manage().window().maximize();
