@@ -74,7 +74,7 @@ public class MainPage extends BasePage {
     @FindBy(xpath = "//input[@placeholder='Post Code']")
     public WebElement postalCodeInput;
 
-    @FindBys({@FindBy(xpath = "//table/tbody/tr[@class='ng-scope']")})
+    @FindBys({@FindBy(xpath = "//tr[@class='ng-scope']")})
     public List<WebElement> rowsFromTableCustomer;
 
     @Step("Нажатие на кнопку Add Customer для перехода на вкладку создание клиентов")
