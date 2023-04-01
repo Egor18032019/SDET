@@ -23,7 +23,7 @@ public class BaseCaseTest {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--headless");
         driver = new ChromeDriver(options);
-        System.setProperty("webdriver.chrome.driver", Const.pathGoogleDriver);
+//        System.setProperty("webdriver.chrome.driver", Const.pathGoogleDriver);
         driver.manage().window().maximize();
         driver.navigate().to(Const.urlMain);
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
