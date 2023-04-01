@@ -11,7 +11,6 @@ import utils.Const;
 import java.time.Duration;
 
 public class BaseCaseTest {
-
     public static WebDriver driver;
     public static WebDriverWait wait;
 
@@ -32,6 +31,4 @@ public class BaseCaseTest {
     public void closeBrowser() {
         driver.quit();
     }
-
-
 }

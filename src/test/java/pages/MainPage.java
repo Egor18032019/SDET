@@ -5,16 +5,19 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
 import pages.base.BasePage;
+
+import java.util.List;
 
 /**
  * Главная страница
  */
 public class MainPage extends BasePage {
+
     public MainPage(WebDriver driver) {
         super(driver);
     }
-
     /**
      * Кнопка <Add Customer>
      */
@@ -35,6 +38,11 @@ public class MainPage extends BasePage {
      */
     @FindBy(xpath = "//button[@ng-class='btnClass3']")
     public WebElement customersButton;
+    /**
+     * Таблица на вкладке Customers
+     */
+    @FindBy(xpath = "//table[@class='table table-bordered table-striped']")
+    public WebElement table;
     /**
      * Строка таблицы из вкладки Customer
      */
@@ -65,6 +73,9 @@ public class MainPage extends BasePage {
      */
     @FindBy(xpath = "//input[@placeholder='Post Code']")
     public WebElement postalCodeInput;
+
+    @FindBys({@FindBy(xpath = "//tr[@class='ng-scope']")})
+    public List<WebElement> rowsFromTableCustomer;
 
     @Step("Нажатие на кнопку Add Customer для перехода на вкладку создание клиентов")
     public void clickButtonAddCustomer() {
@@ -98,6 +109,7 @@ public class MainPage extends BasePage {
     public void sortForFirstName() {
         clickButton(sortLinkFirsName);
     }
+
     @Step("Получение текста alerta(модального окна)")
     public String giveMeAlertText(WebDriver driver) {
         Alert alert = driver.switchTo().alert();

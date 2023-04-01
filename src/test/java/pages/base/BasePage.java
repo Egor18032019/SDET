@@ -21,7 +21,6 @@ public class BasePage {
      * @param button то на что надо нажать
      */
     protected static void clickButton(WebElement button) {
-        System.out.println(button.getText());
         button.click();
     }
 
