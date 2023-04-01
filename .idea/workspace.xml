@@ -5,18 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75407d05-089f-442e-a3be-72a2a5cd4cbe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/utils/Waiters.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/0a375e1a-cef3-4a53-a190-b49c3f01d175-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/3617513a-2808-46c6-8f3c-3b98ddf3a06d-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/60f8b585-c0ef-44f9-9583-4a2b2e75f705-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/80567ab8-ed91-442c-a8f3-b39ca3d6a598-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/80862ae5-97d8-46f9-8bf0-b9af698a0521-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/80e0f7bc-5927-4705-80d6-820cfd2b7217-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/9500d45d-e420-4e7d-8fc9-16b051d4608e-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/d050e459-a18b-4cbe-b67f-39ef59981a1b-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/e9f4f646-0711-4655-bb01-19c60d4e4012-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/MainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/SortingCustomersByFirstNameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/SortingCustomersByFirstNameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/base/BaseCaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/base/BaseCaseTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="firstCases" />
+        <entry key="$PROJECT_DIR$" value="threeCaseTest" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -73,6 +65,37 @@
   }
 }</component>
   <component name="RunManager" selected="JUnit.SortingCustomersByFirstNameTest">
+    <configuration name="FirstCaseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SDETsecond" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cases" />
+      <option name="MAIN_CLASS_NAME" value="tests.FirstCaseTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FirstCaseTest.creatingCustomer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SDETsecond" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.FirstCaseTest" />
+      <option name="METHOD_NAME" value="creatingCustomer" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SecondCaseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SDETsecond" />
       <extension name="coverage">
@@ -84,22 +107,6 @@
       <option name="PACKAGE_NAME" value="cases" />
       <option name="MAIN_CLASS_NAME" value="cases.SecondCaseTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SecondCaseTest.secondCase (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SDETsecond" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.SecondCaseTest" />
-      <option name="METHOD_NAME" value="secondCase" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -116,21 +123,6 @@
       <option name="MAIN_CLASS_NAME" value="cases.SecondCaseTest" />
       <option name="METHOD_NAME" value="secondCase" />
       <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SortingCustomersByFirstName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SDETsecond" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.SortingCustomersByFirstName" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -153,10 +145,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.SortingCustomersByFirstNameTest" />
-        <item itemvalue="JUnit.SortingCustomersByFirstName" />
-        <item itemvalue="JUnit.SecondCaseTest.secondCase (1)" />
         <item itemvalue="JUnit.SecondCaseTest.secondCase" />
         <item itemvalue="JUnit.SecondCaseTest" />
+        <item itemvalue="JUnit.FirstCaseTest.creatingCustomer" />
+        <item itemvalue="JUnit.FirstCaseTest" />
       </list>
     </recent_temporary>
   </component>
@@ -170,6 +162,8 @@
       <updated>1680096132913</updated>
       <workItem from="1680096135391" duration="1637000" />
       <workItem from="1680156383101" duration="394000" />
+      <workItem from="1680268454144" duration="804000" />
+      <workItem from="1680322835792" duration="1837000" />
     </task>
     <servers />
   </component>
@@ -186,26 +180,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/tests/SortingCustomersByFirstNameTest.java</url>
-          <line>46</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/tests/SortingCustomersByFirstNameTest.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-    <watches-manager>
-      <configuration name="JUnit">
-        <watch expression="listRowBeforeClickOnFirstName" />
-      </configuration>
-    </watches-manager>
   </component>
 </project>

@@ -18,7 +18,6 @@ public class MainPage extends BasePage {
     public MainPage(WebDriver driver) {
         super(driver);
     }
-
     /**
      * Кнопка <Add Customer>
      */
@@ -77,7 +76,6 @@ public class MainPage extends BasePage {
 
     @FindBys({@FindBy(xpath = "//table/tbody/tr[@class='ng-scope']")})
     public List<WebElement> rowsFromTableCustomer;
-
 
     @Step("Нажатие на кнопку Add Customer для перехода на вкладку создание клиентов")
     public void clickButtonAddCustomer() {
