@@ -16,7 +16,6 @@ import java.util.List;
  */
 public class SortingCustomersByFirstNameTest extends BaseCaseTest {
     MainPage mainPage;
-
     @Test
     @Issue("T2")
     @Description("Сортировка клиентов по имени (First Name)")
