@@ -34,4 +34,4 @@ jobs:
           echo Install: Chrome
           sudo dpkg --install google-chrome-stable_current_amd64.deb
       - name: Build with Maven
-        run: mvn -B package --file pom.xml
+        run: mvn -B package --file pom.xml test
