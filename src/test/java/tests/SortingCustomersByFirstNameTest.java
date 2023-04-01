@@ -11,8 +11,8 @@ import utils.Waiters;
 import java.util.Comparator;
 import java.util.List;
 /**
- * Тест кейс T3
- * Поиск клиента
+ * Тест кейс T2
+ * Сортировка клиентов по имени (First Name)
  */
 public class SortingCustomersByFirstNameTest extends BaseCaseTest {
     MainPage mainPage;
