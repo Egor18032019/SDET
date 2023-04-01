@@ -22,6 +22,7 @@ public class CreatingCustomerTest extends BaseCaseTest {
         Waiters.waitVisibilityElement(mainPage.addCustomerButton, BaseCaseTest.wait);
         mainPage.clickButtonAddCustomer();
         Waiters.waitVisibilityElement(mainPage.createAccountButton, BaseCaseTest.wait);
+
         mainPage.creatNewCustomer(Const.firstName, Const.lastName, Const.postalCode);
         Waiters.waitAlertWindow(BaseCaseTest.wait);
         String textOnAlert = mainPage.giveMeAlertText(driver);

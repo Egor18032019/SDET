@@ -14,11 +14,10 @@ import java.util.List;
 
 /**
  * Тест кейс T3
- * Создание клиента (Customer)
+ * Поиск клиента
  */
 public class SearchCustomerTest extends BaseCaseTest {
     MainPage mainPage;
-
     @Test
     @Description("Поиск клиента")
     public void searchCustomerTest() {
@@ -26,7 +25,8 @@ public class SearchCustomerTest extends BaseCaseTest {
         Waiters.waitVisibilityElement(mainPage.addCustomerButton, BaseCaseTest.wait);
         mainPage.clickButtonAddCustomer();
         Waiters.waitVisibilityElement(mainPage.createAccountButton, BaseCaseTest.wait);
-        Helpers.addCostumer(Const.firstName, Const.lastName, Const.postalCode, mainPage, driver);
+        Helpers.addCustomer(Const.firstName, Const.lastName, Const.postalCode, mainPage, driver);
+
         Waiters.waitVisibilityElement(mainPage.customersButton, BaseCaseTest.wait);
         mainPage.clickButtonCustomer();
         Waiters.waitVisibilityElement(mainPage.searchCustomerInput, BaseCaseTest.wait);
