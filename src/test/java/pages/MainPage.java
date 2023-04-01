@@ -18,7 +18,6 @@ public class MainPage extends BasePage {
     public MainPage(WebDriver driver) {
         super(driver);
     }
-
     /**
      * Кнопка <Add Customer>
      */
