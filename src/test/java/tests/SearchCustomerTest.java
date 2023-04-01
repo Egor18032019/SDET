@@ -12,7 +12,10 @@ import utils.Waiters;
 
 import java.util.List;
 
-
+/**
+ * Тест кейс T3
+ * Создание клиента (Customer)
+ */
 public class SearchCustomerTest extends BaseCaseTest {
     MainPage mainPage;
 
