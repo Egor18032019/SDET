@@ -8,8 +8,7 @@ public class Const {
     /**
      * путь к гугл драйверу
      */
-//    public static final String pathGoogleDriver = "src/test/resources/webdriver/chromedriver.exe";
-    public static final String pathGoogleDriver = "src/test/resources/webdriver/chromedriverLinux.exe";
+    public static final String pathGoogleDriver = "src/test/resources/webdriver/chromedriver.exe";
 
     public static final String firstName = "First";
     public static final String lastName = "Last";
