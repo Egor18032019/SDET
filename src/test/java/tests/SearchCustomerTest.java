@@ -31,11 +31,11 @@ public class SearchCustomerTest extends BaseCaseTest {
         mainPage.clickButtonAddCustomer();
         addCustomerPage = new AddCustomer(driver);
         Waiters.waitVisibilityElement(addCustomerPage.createAccountButton, wait);
-        Helpers.creatingCustomer(Const.firstName, Const.lastName, Const.postalCode, addCustomerPage, driver, wait);
+        addCustomerPage.creatingCustomer(Const.firstName, Const.lastName, Const.postalCode, driver, wait);
         mainPage.clickButtonCustomer();
         customersPage = new Customers(driver);
         String searchByFirstName = Const.firstName;
-        List<WebElement> listRows = Helpers.searchCustomer(searchByFirstName, customersPage, wait);
+        List<WebElement> listRows = customersPage.searchCustomer(searchByFirstName, wait);
 
         boolean testDone = Helpers.isContainsSearchString(searchByFirstName, listRows);
 
@@ -50,16 +50,15 @@ public class SearchCustomerTest extends BaseCaseTest {
         mainPage.clickButtonAddCustomer();
         addCustomerPage = new AddCustomer(driver);
         Waiters.waitVisibilityElement(addCustomerPage.createAccountButton, wait);
-        Helpers.creatingCustomer(Const.firstName, Const.lastName, Const.postalCode, addCustomerPage, driver, wait);
+        addCustomerPage.creatingCustomer(Const.firstName, Const.lastName, Const.postalCode, driver, wait);
         mainPage.clickButtonCustomer();
         customersPage = new Customers(driver);
         String searchByLastName = Const.lastName;
-        List<WebElement> listRows = Helpers.searchCustomer(searchByLastName, customersPage, wait);
+        List<WebElement> listRows = customersPage.searchCustomer(searchByLastName, wait);
 
         boolean testDone = Helpers.isContainsSearchString(searchByLastName, listRows);
         Assertions.assertTrue(testDone, "The added customer was not found by last name");
     }
-
 
     @Test
     @Description("Поиск клиента по почтовому индексу")
@@ -69,11 +68,11 @@ public class SearchCustomerTest extends BaseCaseTest {
         mainPage.clickButtonAddCustomer();
         addCustomerPage = new AddCustomer(driver);
         Waiters.waitVisibilityElement(addCustomerPage.createAccountButton, wait);
-        Helpers.creatingCustomer(Const.firstName, Const.lastName, Const.postalCode, addCustomerPage, driver, wait);
+        addCustomerPage.creatingCustomer(Const.firstName, Const.lastName, Const.postalCode, driver, wait);
         mainPage.clickButtonCustomer();
         customersPage = new Customers(driver);
         String searchByPostalCode = Const.postalCode;
-        List<WebElement> listRows = Helpers.searchCustomer(searchByPostalCode, customersPage, wait);
+        List<WebElement> listRows = customersPage.searchCustomer(searchByPostalCode, wait);
 
         boolean testDone = Helpers.isContainsSearchString(searchByPostalCode, listRows);
         Assertions.assertTrue(testDone, "The added customer was not found by postal code");

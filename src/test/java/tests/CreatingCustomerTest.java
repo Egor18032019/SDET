@@ -6,7 +6,6 @@ import pages.AddCustomer;
 import pages.MainPage;
 import tests.base.BaseCaseTest;
 import utils.Const;
-import utils.Helpers;
 import utils.Waiters;
 
 /**
@@ -21,10 +20,10 @@ public class CreatingCustomerTest extends BaseCaseTest {
     @Description("Создание клиента (Customer)")
     public void creatingCustomerTest() {
         mainPage = new MainPage(driver);
-        Waiters.waitVisibilityElement(mainPage.addCustomerButton, BaseCaseTest.wait);
+        Waiters.waitVisibilityElement(mainPage.addCustomerButton, wait);
         mainPage.clickButtonAddCustomer();
         addCustomer = new AddCustomer(driver);
-        Waiters.waitVisibilityElement(addCustomer.createAccountButton, BaseCaseTest.wait);
-        Helpers.creatingCustomer(Const.firstName, Const.lastName, Const.postalCode, addCustomer, driver, wait);
+        Waiters.waitVisibilityElement(addCustomer.createAccountButton, wait);
+        addCustomer.creatingCustomer(Const.firstName, Const.lastName, Const.postalCode, driver, wait);
     }
 }

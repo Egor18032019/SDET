@@ -5,7 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
-import pages.base.BasePage;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.Waiters;
 
 import java.util.List;
 
@@ -29,14 +30,11 @@ public class Customers extends MainPage {
      */
     @FindBy(css = ".ng-binding")
     public WebElement row;
-
     /**
      * Поле для текстового вода используемая для поиска клиента
      */
     @FindBy(xpath = "//input[@placeholder='Search Customer']")
     public WebElement searchCustomerInput;
-
-
     /**
      * Ячейка в таблице клиентов надписью "First Name"
      */
@@ -56,6 +54,13 @@ public class Customers extends MainPage {
     @Step("Сортировка таблицы при нажатие на First name")
     public void sortForFirstName() {
         clickButton(sortLinkFirsName);
+    }
+
+    @Step("Поиск клиентов содержащих в ФИО {searchString}")
+    public List<WebElement> searchCustomer(String searchString, WebDriverWait wait) {
+        Waiters.waitVisibilityElement(searchCustomerInput, wait);
+        searchCustomer(searchString);
+        return rowsFromTableCustomer;
     }
 
 }

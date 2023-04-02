@@ -1,11 +1,14 @@
 package pages;
 
 import io.qameta.allure.Step;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import pages.base.BasePage;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.Const;
+import utils.Waiters;
 
 public class AddCustomer extends MainPage {
 
@@ -48,4 +51,19 @@ public class AddCustomer extends MainPage {
         Alert alert = driver.switchTo().alert();
         return alert.getText();
     }
+
+    @Step("Создание нового клиента +  accept модального окна")
+    public void creatingCustomer(String name, String last, String postalCode, WebDriver driver, WebDriverWait wait) {
+        Waiters.waitVisibilityElement(firstNameInput, wait);
+        Waiters.waitVisibilityElement(lastNameInput, wait);
+        Waiters.waitVisibilityElement(postalCodeInput, wait);
+        creatNewCustomer(name, last, postalCode);
+        Waiters.WaitingModalWindow(wait);
+        Alert alert = driver.switchTo().alert();
+        String textOnAlert = alert.getText();
+        boolean iaAdded = textOnAlert.startsWith(Const.expectedTextAfterCreatNewCustomer);
+        Assertions.assertTrue(iaAdded, "New customer not added");
+        alert.accept();
+    }
+
 }
