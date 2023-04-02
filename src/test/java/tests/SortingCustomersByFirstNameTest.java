@@ -9,8 +9,10 @@ import pages.Customers;
 import pages.MainPage;
 import tests.base.BaseCaseTest;
 import utils.Waiters;
+
 import java.util.Comparator;
 import java.util.List;
+
 /**
  * Тест кейс T2
  * Сортировка клиентов по имени (First Name)
@@ -18,6 +20,7 @@ import java.util.List;
 public class SortingCustomersByFirstNameTest extends BaseCaseTest {
     MainPage mainPage;
     Customers customersPage;
+
     @Test
     @Issue("T2")
     @Description("Сортировка клиентов по имени (First Name)")
@@ -41,6 +44,6 @@ public class SortingCustomersByFirstNameTest extends BaseCaseTest {
         List<WebElement> listRowSortedAfterClickOnFirstName = customersPage.rowsFromTableCustomer;
 
         boolean isSorted = listRowSortedAfterClickOnFirstName.equals(listRowBeforeClickOnFirstName);
-        Assertions.assertTrue(isSorted);
+        Assertions.assertTrue(isSorted, "Сортировка списка клиентов не соответствует ожиданием ");
     }
 }

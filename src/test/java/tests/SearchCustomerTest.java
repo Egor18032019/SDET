@@ -36,7 +36,6 @@ public class SearchCustomerTest extends BaseCaseTest {
         customersPage = new Customers(driver);
         String searchByFirstName = Const.firstName;
         List<WebElement> listRows = customersPage.searchCustomer(searchByFirstName, wait);
-
         boolean testDone = Helpers.isContainsSearchString(searchByFirstName, listRows);
 
         Assertions.assertTrue(testDone, "The added customer was not found by name");
@@ -77,5 +76,4 @@ public class SearchCustomerTest extends BaseCaseTest {
         boolean testDone = Helpers.isContainsSearchString(searchByPostalCode, listRows);
         Assertions.assertTrue(testDone, "The added customer was not found by postal code");
     }
-
 }

@@ -31,7 +31,6 @@ public class AddCustomer extends MainPage {
      */
     @FindBy(xpath = "//input[@placeholder='Last Name']")
     public WebElement lastNameInput;
-
     /**
      * Поле для текстового вода Post Code
      */

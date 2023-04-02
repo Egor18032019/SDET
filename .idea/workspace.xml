@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75407d05-089f-442e-a3be-72a2a5cd4cbe" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/AddCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/AddCustomer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/Customers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/Customers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/CreatingCustomerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/CreatingCustomerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/SearchCustomerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/SearchCustomerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/utils/Helpers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/Helpers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/SortingCustomersByFirstNameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/SortingCustomersByFirstNameTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
