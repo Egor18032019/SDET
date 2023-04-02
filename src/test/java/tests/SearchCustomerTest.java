@@ -3,6 +3,7 @@ package tests;
 import io.qameta.allure.Description;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import pages.Customers;
 import pages.MainPage;
 import tests.base.BaseCaseTest;
 import utils.Const;
@@ -15,7 +16,7 @@ import utils.Waiters;
  */
 public class SearchCustomerTest extends BaseCaseTest {
     MainPage mainPage;
-
+    Customers customers;
     @Test
     @Description("Поиск клиента по имени")
     public void searchCustomerByFirstNameTest() {

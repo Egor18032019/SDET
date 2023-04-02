@@ -6,6 +6,7 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.Customers;
 import pages.MainPage;
 
 import java.util.List;
@@ -29,9 +30,10 @@ public class Helpers {
     public static List<WebElement> searchCustomer(String searchString, String name, String last, String postalCode, MainPage mainPage, WebDriver driver, WebDriverWait wait) {
         creatingCustomer(name, last, postalCode, mainPage, driver, wait);
         mainPage.clickButtonCustomer();
-        Waiters.waitVisibilityElement(mainPage.searchCustomerInput, wait);
-        mainPage.searchCustomer(searchString);
-        List<WebElement> table = mainPage.rowsFromTableCustomer;
+        Customers customersPage = new Customers(driver);
+        Waiters.waitVisibilityElement(customersPage.searchCustomerInput, wait);
+        customersPage.searchCustomer(searchString);
+        List<WebElement> table = customersPage.rowsFromTableCustomer;
         return table;
     }
 

@@ -18,6 +18,7 @@ public class MainPage extends BasePage {
     public MainPage(WebDriver driver) {
         super(driver);
     }
+
     /**
      * Кнопка <Add Customer>
      */
@@ -29,25 +30,20 @@ public class MainPage extends BasePage {
     @FindBy(xpath = "//button[contains(text(),'Open Account')]")
     public WebElement openAccountButton;
     /**
-     * Кнопка <Add Customer> расположенная после(ниже) полей для текстового вода
-     */
-    @FindBy(xpath = "//button[contains(text(),'Add Customer')][@class='btn btn-default']")
-    public WebElement createAccountButton;
-    /**
      * Кнопка <Customers>
      */
     @FindBy(xpath = "//button[@ng-class='btnClass3']")
     public WebElement customersButton;
+
+
+
     /**
-     * Таблица на вкладке Customers
+     * Кнопка <Add Customer> расположенная после(ниже) полей для текстового вода
      */
-    @FindBy(xpath = "//table[@class='table table-bordered table-striped']")
-    public WebElement table;
-    /**
-     * Строка таблицы из вкладки Customer
-     */
-    @FindBy(css = ".ng-binding")
-    public WebElement row;
+    @FindBy(xpath = "//button[contains(text(),'Add Customer')][@class='btn btn-default']")
+    public WebElement createAccountButton;
+
+
     /**
      * Поле для текстового вода First name
      */
@@ -58,24 +54,13 @@ public class MainPage extends BasePage {
      */
     @FindBy(xpath = "//input[@placeholder='Last Name']")
     public WebElement lastNameInput;
-    /**
-     * Поле для текстового вода используемая для поиска клиента
-     */
-    @FindBy(xpath = "//input[@placeholder='Search Customer']")
-    public WebElement searchCustomerInput;
-    /**
-     * Ячейка в таблице клиентов надписью "First Name"
-     */
-    @FindBy(linkText = "First Name")
-    public WebElement sortLinkFirsName;
+
     /**
      * Поле для текстового вода Post Code
      */
     @FindBy(xpath = "//input[@placeholder='Post Code']")
     public WebElement postalCodeInput;
 
-    @FindBys({@FindBy(xpath = "//tr[@class='ng-scope']")})
-    public List<WebElement> rowsFromTableCustomer;
 
     @Step("Нажатие на кнопку Add Customer для перехода на вкладку создание клиентов")
     public void clickButtonAddCustomer() {
@@ -100,15 +85,8 @@ public class MainPage extends BasePage {
         clickButton(createAccountButton);
     }
 
-    @Step("Поиск клиента {name}")
-    public void searchCustomer(String name) {
-        setTextElementText(searchCustomerInput, name);
-    }
 
-    @Step("Нажали на First name")
-    public void sortForFirstName() {
-        clickButton(sortLinkFirsName);
-    }
+
 
     @Step("Получение текста alerta(модального окна)")
     public String giveMeAlertText(WebDriver driver) {

@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75407d05-089f-442e-a3be-72a2a5cd4cbe" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/pages/Customers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/MainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/SearchCustomerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/SearchCustomerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/SortingCustomersByFirstNameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/SortingCustomersByFirstNameTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/utils/Helpers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/Helpers.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +66,22 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.SearchCustomerTest">
+  <component name="RunManager" selected="JUnit.SortingCustomersByFirstNameTest">
+    <configuration name="CreatingCustomerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SDETsecond" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.CreatingCustomerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SearchCustomerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SDETsecond" />
       <extension name="coverage">
@@ -74,22 +93,6 @@
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.SearchCustomerTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SearchCustomerTest.searchCustomerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SDETsecond" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.SearchCustomerTest" />
-      <option name="METHOD_NAME" value="searchCustomerTest" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -142,11 +145,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SearchCustomerTest" />
         <item itemvalue="JUnit.SortingCustomersByFirstNameTest" />
+        <item itemvalue="JUnit.CreatingCustomerTest" />
+        <item itemvalue="JUnit.SearchCustomerTest" />
         <item itemvalue="JUnit.SortingCustomersByFirstName" />
         <item itemvalue="JUnit.SecondCaseTest.secondCase" />
-        <item itemvalue="JUnit.SearchCustomerTest.searchCustomerTest" />
       </list>
     </recent_temporary>
   </component>
