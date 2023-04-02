@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.Const;
+import utils.Helpers;
 
 import java.time.Duration;
 
@@ -24,7 +25,9 @@ public class BaseCaseTest {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
         driver = new ChromeDriver(options);
-        System.setProperty("webdriver.chrome.driver", Const.pathGoogleDriver);
+        if (Helpers.isWindows()) {
+            System.setProperty("webdriver.chrome.driver", Const.pathGoogleDriver);
+        }
         driver.manage().window().maximize();
         driver.navigate().to(Const.urlMain);
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));

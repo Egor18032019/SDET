@@ -59,6 +59,11 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Hobby\Git\SDET\SDETsecond" />
+    </key>
+  </component>
   <component name="RunManager" selected="JUnit.SearchCustomerTest">
     <configuration name="CreatingCustomerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SDETsecond" />
