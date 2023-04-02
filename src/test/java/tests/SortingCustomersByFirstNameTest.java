@@ -26,6 +26,8 @@ public class SortingCustomersByFirstNameTest extends BaseCaseTest {
         Waiters.waitVisibilityElement(mainPage.customersButton, BaseCaseTest.wait);
         mainPage.clickButtonCustomer();
         customersPage = new Customers(driver);
+        Waiters.waitVisibilityElement(customersPage.customersButton, BaseCaseTest.wait);
+        customersPage = new Customers(driver);
         Waiters.waitVisibilityElement(customersPage.table, BaseCaseTest.wait);
         List<WebElement> listRowBeforeClickOnFirstName = customersPage.rowsFromTableCustomer;
         int sizeList = listRowBeforeClickOnFirstName.size();

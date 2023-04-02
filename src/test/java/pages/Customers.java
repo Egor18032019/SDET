@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Страница Customers
  */
-public class Customers extends BasePage {
+public class Customers extends MainPage {
 
 
     public Customers(WebDriver driver) {
