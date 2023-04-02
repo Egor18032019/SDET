@@ -10,16 +10,19 @@ import utils.Const;
 
 import java.time.Duration;
 
+/**
+ * Родительский класс в котором прописано открытие браузера и закрытие браузера
+ * + инициализация WebDriver и WebDriverWait
+ */
 public class BaseCaseTest {
     public static WebDriver driver;
     public static WebDriverWait wait;
 
-    // TODO проверить интернет
     @BeforeEach
     public void openURL() {
         System.setProperty("webdriver.http.factory", "jdk-http-client");
         ChromeOptions options = new ChromeOptions();
-//        options.addArguments("--headless");
+        options.addArguments("--headless");
         driver = new ChromeDriver(options);
         System.setProperty("webdriver.chrome.driver", Const.pathGoogleDriver);
         driver.manage().window().maximize();

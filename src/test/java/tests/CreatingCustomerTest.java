@@ -1,8 +1,8 @@
 package tests;
 
 import io.qameta.allure.Description;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import pages.AddCustomer;
 import pages.MainPage;
 import tests.base.BaseCaseTest;
 import utils.Const;
@@ -14,18 +14,16 @@ import utils.Waiters;
  */
 public class CreatingCustomerTest extends BaseCaseTest {
     MainPage mainPage;
+    AddCustomer addCustomer;
 
     @Test
     @Description("Создание клиента (Customer)")
     public void creatingCustomerTest() {
         mainPage = new MainPage(driver);
-        Waiters.waitVisibilityElement(mainPage.addCustomerButton, BaseCaseTest.wait);
+        Waiters.waitVisibilityElement(mainPage.addCustomerButton, wait);
         mainPage.clickButtonAddCustomer();
-        Waiters.waitVisibilityElement(mainPage.createAccountButton, BaseCaseTest.wait);
-        mainPage.creatNewCustomer(Const.firstName, Const.lastName, Const.postalCode);
-        Waiters.waitAlertWindow(BaseCaseTest.wait);
-        String textOnAlert = mainPage.giveMeAlertText(driver);
-        boolean iaAdded = textOnAlert.startsWith(Const.expectedTextAfterCreatNewCustomer);
-        Assertions.assertTrue(iaAdded, "New customer not added");
+        addCustomer = new AddCustomer(driver);
+        Waiters.waitVisibilityElement(addCustomer.createAccountButton, wait);
+        addCustomer.creatingCustomer(Const.firstName, Const.lastName, Const.postalCode, driver, wait);
     }
 }
