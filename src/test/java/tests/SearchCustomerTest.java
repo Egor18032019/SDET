@@ -24,7 +24,7 @@ public class SearchCustomerTest extends BaseCaseTest {
         mainPage.clickButtonAddCustomer();
         Waiters.waitVisibilityElement(mainPage.createAccountButton, wait);
         String searchByFirstName = Const.firstName;
-        boolean testDone = Helpers.searchCustomer(searchByFirstName, Const.firstName, Const.lastName, Const.postalCode, mainPage, driver, wait);
+        boolean testDone = Helpers.isContainsSearchString(searchByFirstName, Const.firstName, Const.lastName, Const.postalCode, mainPage, driver, wait);
 
         Assertions.assertTrue(testDone, "The added customer was not found by name");
     }
@@ -37,7 +37,7 @@ public class SearchCustomerTest extends BaseCaseTest {
         mainPage.clickButtonAddCustomer();
         Waiters.waitVisibilityElement(mainPage.createAccountButton, wait);
         String searchByLastName = Const.lastName;
-        boolean testDone = Helpers.searchCustomer(searchByLastName, Const.firstName, Const.lastName, Const.postalCode, mainPage, driver, wait);
+        boolean testDone = Helpers.isContainsSearchString(searchByLastName, Const.firstName, Const.lastName, Const.postalCode, mainPage, driver, wait);
 
         Assertions.assertTrue(testDone, "The added customer was not found by last name");
     }
@@ -50,7 +50,7 @@ public class SearchCustomerTest extends BaseCaseTest {
         mainPage.clickButtonAddCustomer();
         Waiters.waitVisibilityElement(mainPage.createAccountButton, wait);
         String searchByPostalCode = Const.postalCode;
-        boolean testDone = Helpers.searchCustomer(searchByPostalCode, Const.firstName, Const.lastName, Const.postalCode, mainPage, driver, wait);
+        boolean testDone = Helpers.isContainsSearchString(searchByPostalCode, Const.firstName, Const.lastName, Const.postalCode, mainPage, driver, wait);
 
         Assertions.assertTrue(testDone, "The added customer was not found by postal code");
     }

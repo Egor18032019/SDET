@@ -15,7 +15,7 @@ public class Waiters {
     }
 
     @Step("Ожидание модального окна")
-    public static void waitAlertWindow(WebDriverWait wait) {
+    public static void WaitingModalWindow(WebDriverWait wait) {
         wait.until(ExpectedConditions.alertIsPresent());
     }
 }
