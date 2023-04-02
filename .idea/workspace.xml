@@ -10,6 +10,7 @@
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/CreatingCustomerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/CreatingCustomerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/SearchCustomerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/SearchCustomerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/SortingCustomersByFirstNameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/SortingCustomersByFirstNameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/base/BaseCaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/base/BaseCaseTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

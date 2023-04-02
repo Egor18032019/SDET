@@ -2,7 +2,6 @@ package tests.base;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.parallel.ResourceLock;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -21,8 +20,6 @@ public class BaseCaseTest {
     public static WebDriverWait wait;
 
     @BeforeEach
-//    @ResourceLock(value = "wait")
-//    @ResourceLock(value = "driver")
     public void openURL() {
         System.setProperty("webdriver.http.factory", "jdk-http-client");
         ChromeOptions options = new ChromeOptions();
