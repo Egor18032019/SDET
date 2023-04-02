@@ -4,6 +4,7 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Issue;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.parallel.ResourceLock;
 import org.openqa.selenium.WebElement;
 import pages.Customers;
 import pages.MainPage;
@@ -24,6 +25,9 @@ public class SortingCustomersByFirstNameTest extends BaseCaseTest {
     @Test
     @Issue("T2")
     @Description("Сортировка клиентов по имени (First Name)")
+    @ResourceLock(value = "mainPage")
+    @ResourceLock(value = "customersPage")
+    @ResourceLock(value = "driver")
     public void sortingCustomersByFirstNameTest() {
         mainPage = new MainPage(driver);
         Waiters.waitVisibilityElement(mainPage.customersButton, BaseCaseTest.wait);

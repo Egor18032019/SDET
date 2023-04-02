@@ -3,6 +3,7 @@ package tests;
 import io.qameta.allure.Description;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.parallel.ResourceLock;
 import org.openqa.selenium.WebElement;
 import pages.AddCustomer;
 import pages.Customers;
@@ -25,6 +26,10 @@ public class SearchCustomerTest extends BaseCaseTest {
 
     @Test
     @Description("Поиск клиента по имени")
+    @ResourceLock(value = "mainPage")
+    @ResourceLock(value = "customersPage")
+    @ResourceLock(value = "addCustomer")
+    @ResourceLock(value = "driver")
     public void searchCustomerByFirstNameTest() {
         mainPage = new MainPage(driver);
         Waiters.waitVisibilityElement(mainPage.customersButton, BaseCaseTest.wait);
@@ -43,6 +48,10 @@ public class SearchCustomerTest extends BaseCaseTest {
 
     @Test
     @Description("Поиск клиента по фамилии")
+    @ResourceLock(value = "mainPage")
+    @ResourceLock(value = "customersPage")
+    @ResourceLock(value = "addCustomer")
+    @ResourceLock(value = "driver")
     public void searchCustomerByLastNameTest() {
         mainPage = new MainPage(driver);
         Waiters.waitVisibilityElement(mainPage.customersButton, BaseCaseTest.wait);
@@ -61,6 +70,10 @@ public class SearchCustomerTest extends BaseCaseTest {
 
     @Test
     @Description("Поиск клиента по почтовому индексу")
+    @ResourceLock(value = "mainPage")
+    @ResourceLock(value = "customersPage")
+    @ResourceLock(value = "addCustomer")
+    @ResourceLock(value = "driver")
     public void searchCustomerByPostalCodeTest() {
         mainPage = new MainPage(driver);
         Waiters.waitVisibilityElement(mainPage.customersButton, BaseCaseTest.wait);

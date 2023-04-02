@@ -2,6 +2,7 @@ package tests;
 
 import io.qameta.allure.Description;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.parallel.ResourceLock;
 import pages.AddCustomer;
 import pages.MainPage;
 import tests.base.BaseCaseTest;
@@ -18,6 +19,9 @@ public class CreatingCustomerTest extends BaseCaseTest {
 
     @Test
     @Description("Создание клиента (Customer)")
+    @ResourceLock(value = "mainPage")
+    @ResourceLock(value = "addCustomer")
+    @ResourceLock(value = "driver")
     public void creatingCustomerTest() {
         mainPage = new MainPage(driver);
         Waiters.waitVisibilityElement(mainPage.addCustomerButton, wait);
