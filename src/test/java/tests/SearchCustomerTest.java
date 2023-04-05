@@ -3,6 +3,9 @@ package tests;
 import io.qameta.allure.Description;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.parallel.Execution;
+import org.junit.jupiter.api.parallel.ExecutionMode;
 import org.junit.jupiter.api.parallel.ResourceLock;
 import org.openqa.selenium.WebElement;
 import pages.AddCustomer;
@@ -15,20 +18,21 @@ import utils.Waiters;
 
 import java.util.List;
 
+import static org.junit.jupiter.api.parallel.ExecutionMode.CONCURRENT;
+
 /**
  * Тест кейс T3
  * Поиск клиента
  */
-public class SearchCustomerTest extends BaseCaseTest {
+@Execution(CONCURRENT)
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+ public class SearchCustomerTest extends BaseCaseTest {
     MainPage mainPage;
     Customers customersPage;
     AddCustomer addCustomerPage;
 
     @Test
     @Description("Поиск клиента по имени")
-    @ResourceLock(value = "mainPage")
-    @ResourceLock(value = "customersPage")
-    @ResourceLock(value = "addCustomer")
     @ResourceLock(value = "driver")
     public void searchCustomerByFirstNameTest() {
         mainPage = new MainPage(driver);
@@ -48,9 +52,6 @@ public class SearchCustomerTest extends BaseCaseTest {
 
     @Test
     @Description("Поиск клиента по фамилии")
-    @ResourceLock(value = "mainPage")
-    @ResourceLock(value = "customersPage")
-    @ResourceLock(value = "addCustomer")
     @ResourceLock(value = "driver")
     public void searchCustomerByLastNameTest() {
         mainPage = new MainPage(driver);
@@ -70,9 +71,6 @@ public class SearchCustomerTest extends BaseCaseTest {
 
     @Test
     @Description("Поиск клиента по почтовому индексу")
-    @ResourceLock(value = "mainPage")
-    @ResourceLock(value = "customersPage")
-    @ResourceLock(value = "addCustomer")
     @ResourceLock(value = "driver")
     public void searchCustomerByPostalCodeTest() {
         mainPage = new MainPage(driver);

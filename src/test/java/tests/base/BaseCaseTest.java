@@ -2,6 +2,8 @@ package tests.base;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.parallel.Execution;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -11,12 +13,16 @@ import utils.Helpers;
 
 import java.time.Duration;
 
+import static org.junit.jupiter.api.parallel.ExecutionMode.CONCURRENT;
+
 /**
  * Родительский класс в котором прописано открытие браузера и закрытие браузера
  * + инициализация WebDriver и WebDriverWait
  */
-public class BaseCaseTest {
-    public static WebDriver driver;
+@Execution(CONCURRENT)
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+ public class BaseCaseTest {
+    public   WebDriver driver;
     public static WebDriverWait wait;
 
     @BeforeEach
@@ -35,6 +41,7 @@ public class BaseCaseTest {
 
     @AfterEach()
     public void closeBrowser() {
+        driver.manage().deleteAllCookies();
         driver.quit();
     }
 }
