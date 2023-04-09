@@ -3,6 +3,10 @@ package tests;
 import io.qameta.allure.Description;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.parallel.Execution;
+import org.junit.jupiter.api.parallel.ExecutionMode;
+import org.junit.jupiter.api.parallel.ResourceLock;
 import org.openqa.selenium.WebElement;
 import pages.AddCustomer;
 import pages.Customers;
@@ -14,20 +18,24 @@ import utils.Waiters;
 
 import java.util.List;
 
+import static org.junit.jupiter.api.parallel.ExecutionMode.CONCURRENT;
+
 /**
  * Тест кейс T3
  * Поиск клиента
  */
-public class SearchCustomerTest extends BaseCaseTest {
+@Execution(CONCURRENT)
+@TestInstance(TestInstance.Lifecycle.PER_METHOD)
+ public class SearchCustomerTest extends BaseCaseTest {
     MainPage mainPage;
     Customers customersPage;
     AddCustomer addCustomerPage;
 
     @Test
     @Description("Поиск клиента по имени")
-    public void searchCustomerByFirstNameTest() {
+     public void searchCustomerByFirstNameTest() {
         mainPage = new MainPage(driver);
-        Waiters.waitVisibilityElement(mainPage.customersButton, BaseCaseTest.wait);
+        Waiters.waitVisibilityElement(mainPage.customersButton, wait);
         mainPage.clickButtonAddCustomer();
         addCustomerPage = new AddCustomer(driver);
         Waiters.waitVisibilityElement(addCustomerPage.createAccountButton, wait);
@@ -43,9 +51,9 @@ public class SearchCustomerTest extends BaseCaseTest {
 
     @Test
     @Description("Поиск клиента по фамилии")
-    public void searchCustomerByLastNameTest() {
+     public void searchCustomerByLastNameTest() {
         mainPage = new MainPage(driver);
-        Waiters.waitVisibilityElement(mainPage.customersButton, BaseCaseTest.wait);
+        Waiters.waitVisibilityElement(mainPage.customersButton, wait);
         mainPage.clickButtonAddCustomer();
         addCustomerPage = new AddCustomer(driver);
         Waiters.waitVisibilityElement(addCustomerPage.createAccountButton, wait);
@@ -61,9 +69,9 @@ public class SearchCustomerTest extends BaseCaseTest {
 
     @Test
     @Description("Поиск клиента по почтовому индексу")
-    public void searchCustomerByPostalCodeTest() {
+     public void searchCustomerByPostalCodeTest() {
         mainPage = new MainPage(driver);
-        Waiters.waitVisibilityElement(mainPage.customersButton, BaseCaseTest.wait);
+        Waiters.waitVisibilityElement(mainPage.customersButton, wait);
         mainPage.clickButtonAddCustomer();
         addCustomerPage = new AddCustomer(driver);
         Waiters.waitVisibilityElement(addCustomerPage.createAccountButton, wait);
