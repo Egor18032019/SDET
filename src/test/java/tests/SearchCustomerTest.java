@@ -25,7 +25,7 @@ import static org.junit.jupiter.api.parallel.ExecutionMode.CONCURRENT;
  * Поиск клиента
  */
 @Execution(CONCURRENT)
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+@TestInstance(TestInstance.Lifecycle.PER_METHOD)
  public class SearchCustomerTest extends BaseCaseTest {
     MainPage mainPage;
     Customers customersPage;
@@ -33,10 +33,9 @@ import static org.junit.jupiter.api.parallel.ExecutionMode.CONCURRENT;
 
     @Test
     @Description("Поиск клиента по имени")
-    @ResourceLock(value = "driver")
-    public void searchCustomerByFirstNameTest() {
+     public void searchCustomerByFirstNameTest() {
         mainPage = new MainPage(driver);
-        Waiters.waitVisibilityElement(mainPage.customersButton, BaseCaseTest.wait);
+        Waiters.waitVisibilityElement(mainPage.customersButton, wait);
         mainPage.clickButtonAddCustomer();
         addCustomerPage = new AddCustomer(driver);
         Waiters.waitVisibilityElement(addCustomerPage.createAccountButton, wait);
@@ -52,10 +51,9 @@ import static org.junit.jupiter.api.parallel.ExecutionMode.CONCURRENT;
 
     @Test
     @Description("Поиск клиента по фамилии")
-    @ResourceLock(value = "driver")
-    public void searchCustomerByLastNameTest() {
+     public void searchCustomerByLastNameTest() {
         mainPage = new MainPage(driver);
-        Waiters.waitVisibilityElement(mainPage.customersButton, BaseCaseTest.wait);
+        Waiters.waitVisibilityElement(mainPage.customersButton, wait);
         mainPage.clickButtonAddCustomer();
         addCustomerPage = new AddCustomer(driver);
         Waiters.waitVisibilityElement(addCustomerPage.createAccountButton, wait);
@@ -71,10 +69,9 @@ import static org.junit.jupiter.api.parallel.ExecutionMode.CONCURRENT;
 
     @Test
     @Description("Поиск клиента по почтовому индексу")
-    @ResourceLock(value = "driver")
-    public void searchCustomerByPostalCodeTest() {
+     public void searchCustomerByPostalCodeTest() {
         mainPage = new MainPage(driver);
-        Waiters.waitVisibilityElement(mainPage.customersButton, BaseCaseTest.wait);
+        Waiters.waitVisibilityElement(mainPage.customersButton, wait);
         mainPage.clickButtonAddCustomer();
         addCustomerPage = new AddCustomer(driver);
         Waiters.waitVisibilityElement(addCustomerPage.createAccountButton, wait);

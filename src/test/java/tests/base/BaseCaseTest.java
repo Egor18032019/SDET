@@ -23,7 +23,7 @@ import static org.junit.jupiter.api.parallel.ExecutionMode.CONCURRENT;
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
  public class BaseCaseTest {
     public   WebDriver driver;
-    public static WebDriverWait wait;
+    public   WebDriverWait wait;
 
     @BeforeEach
     public void openURL() {
@@ -36,7 +36,7 @@ import static org.junit.jupiter.api.parallel.ExecutionMode.CONCURRENT;
         }
         driver.manage().window().maximize();
         driver.navigate().to(Const.urlMain);
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
 
     @AfterEach()

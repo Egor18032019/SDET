@@ -33,12 +33,12 @@ import static org.junit.jupiter.api.parallel.ExecutionMode.CONCURRENT;
     @Description("Сортировка клиентов по имени (First Name)")
      public void sortingCustomersByFirstNameTest() {
         mainPage = new MainPage(driver);
-        Waiters.waitVisibilityElement(mainPage.customersButton, BaseCaseTest.wait);
+        Waiters.waitVisibilityElement(mainPage.customersButton, wait);
         mainPage.clickButtonCustomer();
         customersPage = new Customers(driver);
-        Waiters.waitVisibilityElement(customersPage.customersButton, BaseCaseTest.wait);
+        Waiters.waitVisibilityElement(customersPage.customersButton, wait);
         customersPage = new Customers(driver);
-        Waiters.waitVisibilityElement(customersPage.table, BaseCaseTest.wait);
+        Waiters.waitVisibilityElement(customersPage.table, wait);
         List<WebElement> listRowBeforeClickOnFirstName = customersPage.rowsFromTableCustomer;
         int sizeList = listRowBeforeClickOnFirstName.size();
         if (sizeList == 0) {
@@ -47,7 +47,7 @@ import static org.junit.jupiter.api.parallel.ExecutionMode.CONCURRENT;
         listRowBeforeClickOnFirstName.sort(Comparator.comparing(o -> o.getText().split(" ")[0]));
         customersPage.sortForFirstName();
         // Ждем именно когда появится строка. Таблица уже есть
-        Waiters.waitVisibilityElement(customersPage.row, BaseCaseTest.wait);
+        Waiters.waitVisibilityElement(customersPage.row, wait);
         List<WebElement> listRowSortedAfterClickOnFirstName = customersPage.rowsFromTableCustomer;
 
         boolean isSorted = listRowSortedAfterClickOnFirstName.equals(listRowBeforeClickOnFirstName);
